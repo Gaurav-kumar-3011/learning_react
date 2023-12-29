@@ -1,29 +1,36 @@
-/*
-*<div id="parent">
-*  <div id="child">
-*       <h1>I am h1 tag</h1>
-*       <h2>I am h2 tag</h2>
-*  </div>
-*  <div id="child2">
-*       <h1>I am h1 tag</h1>
-*       <h2>I am h2 tag</h2>
-*  </div>
-*</div>
-*
-*/
+import React from "react";
+import ReactDOM from "react-dom/client";
+
+//React.createElement => ReactElement(Object) => HTMLElement(render)
+// const heading = React.createElement("h1", { id: "heading" }, "Gaurav learn");
+
+//JSX -HTML like or XML like syntax inside javascript 
+//JSX =>Babel transpiles it to React.CreateElement() =>JS Object => transpiled/renders HTML Element 
+const header = (
+    <div className="red">
+        <h1 className="head" tabIndex="1"> Gaurav started  🚀</h1>
+    </div>
+);
+
+const Title = () => {
+    return <h1 className="head" tabIndex="1"> Learning  🚀</h1>
+};
+//console.log(jsxheading);
+
+//React Component
+//Class Based Component
+//Functional Component 
+
+//React Functional Component
+const HeadingComponent = () => (
+    <div id="container">
+        <h2>{header}</h2>
+        <Title />
+        <h1 className="heading">Namste React Gaurav Learning</h1>
+    </div>
+);
 
 
-
-const parent = React.createElement("div", { id: "parent" },
-        [React.createElement("div", { id: "child" },
-                [React.createElement("h1", {}, "I am h1 tag"),
-                React.createElement("h2", {}, "I am h2 tag")
-                ]),
-        React.createElement("div", { id: "child2" },
-                [React.createElement("h1", {}, "I am h1 tag"),
-                React.createElement("h2", {}, "I am h2 tag")
-                ])
-        ]);
-console.log(parent);
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(parent);
+//root.render(jsxheading);
+root.render(<HeadingComponent />);  //syntax that Babel understands
